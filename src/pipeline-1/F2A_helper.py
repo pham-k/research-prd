@@ -110,7 +110,7 @@ def F2A5():
         .replace(label.DTBS))
     
     df['F2A5'] = df.apply(util.concatenate_columns, axis=1)
-    print(df.columns)
+    # print(df.columns)
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -133,7 +133,7 @@ def F2A6():
         .replace(label.NUOIDUONG6T))
     
     df['F2A6'] = df.apply(util.concatenate_columns, axis=1)
-    print(df.columns)
+    # print(df.columns)
     df.drop(columns=cols, inplace=True)
     return df
 

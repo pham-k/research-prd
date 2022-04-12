@@ -30,7 +30,7 @@ def F2B1_F2B11():
         .rename(columns=columns)
         .fillna('KHONG RO')
         .replace(label.TANSUATTUAN))
-    print(df.info())
+    # print(df.info())
     return df
 
 def F2B12_F2B15():
@@ -55,7 +55,7 @@ def F2B12_F2B15():
         .rename(columns=columns)
         .fillna('KHONG RO')
         .replace(label.NHIGIA))
-    print(df.info())
+    # print(df.info())
     return df
 
 

@@ -13,4 +13,6 @@ def concatenate_columns(row):
     Returns:
         A string, separated by ', ', ignore None or empty string
     """
-    return ', '.join(list(filter(None, row[1:].tolist())))
+    lst = [str(x) for x in row[1:].tolist()]  # convert elements to string
+    # print(lst)
+    return ', '.join(list(filter(None, lst)))
