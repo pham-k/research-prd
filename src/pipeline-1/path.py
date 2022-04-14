@@ -8,6 +8,8 @@ TK = '../../data/external/prd_v2.0.0_TaiKham.csv'
 CAY = '../../data/external/prd_v2.0.0_Cay.csv'
 PCR = '../../data/external/prd_v2.0.0_PCR.csv'
 GPB = '../../data/external/prd_v2.0.0_GPB.csv'
+TDP = '../../data/external/prd_v2.0.0_TacDungPhu.csv'
+TIENCAN = '../../data/external/prd_v2.0.0_TienCan.csv'
 
 OUTPUT_MAIN = '../../data/intermediate/main.xlsx'
 INTERMEDIATE = '../../data/intermediate/'

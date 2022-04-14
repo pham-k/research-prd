@@ -8,7 +8,7 @@ TK = pd.read_csv(path.TK, dtype={
     'V1': str,
 })
 
-def F52_NGAY():
+def F53_NGAY():
     """
     Get variable NGAY THAM GIA (yyyy-mm-dd)
 
@@ -19,18 +19,18 @@ def F52_NGAY():
         DataFrame contains 2 columns MANC, NGAY 
     """
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 3.0')
         [['V1', 'NgayTK']]
         .rename(columns={
             'V1': 'MANC',
-            'NgayTK': 'F52_NGAY'
+            'NgayTK': 'F53_NGAY'
         }))
     df.drop_duplicates(subset=['MANC'], inplace=True)
-    df['F52_NGAY'] = pd.to_datetime(df['F52_NGAY']).dt.strftime('%Y-%m-%d')
+    df['F53_NGAY'] = pd.to_datetime(df['F53_NGAY']).dt.strftime('%Y-%m-%d')
     return df
 
 
-def F52A1():
+def F53A1():
     """
     Get variable DAU BUNG
 
@@ -38,21 +38,21 @@ def F52A1():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A1
+        DataFrame contains 2 columns MANC, F53A1
     """
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 3.0')
         [['V1', 'DauBungTS']]
         .rename(columns={
             'V1': 'MANC',
-            'DauBungTS': 'F52A1'
+            'DauBungTS': 'F53A1'
         })
         .fillna('')
         .replace(label.TANSUATTUAN))
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A1A():
+def F53A1A():
     """
     Get variable DAU BUNG - ANH HUONG
 
@@ -60,10 +60,10 @@ def F52A1A():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A1A
+        DataFrame contains 2 columns MANC, F53A1A
     """
     cols = ['DauBungAH1', 'DauBungAH2', 'DauBungAH3', 'DauBungAH4', 'DauBungAH5', ]
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1'] + cols]
         .rename(columns={
             'V1': 'MANC',
@@ -71,12 +71,12 @@ def F52A1A():
         .fillna('')
         .replace(label.DAUBUNGANHHUONG))
     
-    df['F52A1A'] = df.apply(util.concatenate_columns, axis=1)
+    df['F53A1A'] = df.apply(util.concatenate_columns, axis=1)
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A2():
+def F53A2():
     """
     Get variable OI
 
@@ -84,21 +84,21 @@ def F52A2():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A2
+        DataFrame contains 2 columns MANC, F53A2
     """
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 3.0')
         [['V1', 'OiTS']]
         .rename(columns={
             'V1': 'MANC',
-            'OiTS': 'F52A2'
+            'OiTS': 'F53A2'
         })
         .fillna('')
         .replace(label.TANSUATTUAN))
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A2A():
+def F53A2A():
     """
     Get variable OI - TINH CHAT DICH
 
@@ -106,11 +106,11 @@ def F52A2A():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A2A
+        DataFrame contains 2 columns MANC, F53A2A
     """
     cols = ['OiTCDich1', 'OiTCDich2', 'OiTCDich3', 'OiTCDich4', 'OiTCDich5', ]
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 3.0')
         [['V1'] + cols]
         .rename(columns={
             'V1': 'MANC',
@@ -118,12 +118,12 @@ def F52A2A():
         .fillna('')
         .replace(label.TINHCHATDICH))
     
-    df['F52A2A'] = df.apply(util.concatenate_columns, axis=1)
+    df['F53A2A'] = df.apply(util.concatenate_columns, axis=1)
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A3A():
+def F53A3A():
     """
     Get variable TAO BON
 
@@ -131,13 +131,13 @@ def F52A3A():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A3A
+        DataFrame contains 2 columns MANC, F53A3A
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1', 'TaoBon']]
         .rename(columns={
             'V1': 'MANC',
-            'TaoBon': 'F52A3A'
+            'TaoBon': 'F53A3A'
         })
         .replace(label.NHIGIA)
         .fillna('KHONG RO')
@@ -145,7 +145,7 @@ def F52A3A():
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A3B():
+def F53A3B():
     """
     Get variable BRISTOL
 
@@ -153,19 +153,19 @@ def F52A3B():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A3B
+        DataFrame contains 2 columns MANC, F53A3B
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1', 'Bristol']]
         .rename(columns={
             'V1': 'MANC',
-            'Bristol': 'F52A3B'
+            'Bristol': 'F53A3B'
         })
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A4():
+def F53A4():
     """
     Get variable THAY DOI CAN NANG
 
@@ -173,13 +173,13 @@ def F52A4():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A4
+        DataFrame contains 2 columns MANC, F53A4
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1', 'TDCanNang']]
         .rename(columns={
             'V1': 'MANC',
-            'TDCanNang': 'F52A4'
+            'TDCanNang': 'F53A4'
         })
         .fillna('KHONG RO')
         .replace(label.THAYDOICANNANG)
@@ -187,7 +187,7 @@ def F52A4():
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A5():
+def F53A5():
     """
     Get variable TRIEU CHUNG KHAC
 
@@ -195,11 +195,11 @@ def F52A5():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A5
+        DataFrame contains 2 columns MANC, F53A5
     """
     cols = ['TCKhac1', 'TCKhac2', 'TCKhac3', 'TCKhac4', 'TCKhac5', 'TCKhac6', 'TCKhac7', 
             'TCKhac8', 'TCKhac9', 'TCKhac10', 'TCKhac11', 'TCKhac12', 'TCKhac13', ]
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1'] + cols]
         .rename(columns={
             'V1': 'MANC',
@@ -207,12 +207,12 @@ def F52A5():
         .fillna('')
         .replace(label.TRIEUCHUNG))
     
-    df['F52A5'] = df.apply(util.concatenate_columns, axis=1)
+    df['F53A5'] = df.apply(util.concatenate_columns, axis=1)
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A8():
+def F53A8():
     """
     Get variable CHIEU CAO
 
@@ -220,20 +220,20 @@ def F52A8():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A8
+        DataFrame contains 2 columns MANC, F53A8
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1', 'ChieuCao']]
         .rename(columns={
             'V1': 'MANC',
-            'ChieuCao': 'F52A8'
+            'ChieuCao': 'F53A8'
         })
         .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52A9():
+def F53A9():
     """
     Get variable CAN NANG
 
@@ -241,13 +241,13 @@ def F52A9():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52A9
+        DataFrame contains 2 columns MANC, F53A9
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 3.0')
         [['V1', 'CanNang']]
         .rename(columns={
             'V1': 'MANC',
-            'CanNang': 'F52A9'
+            'CanNang': 'F53A9'
         })
         .fillna(0)
         )

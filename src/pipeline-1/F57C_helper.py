@@ -13,7 +13,7 @@ TDP = pd.read_csv(path.TDP, dtype={
     'MaTK': str,
 })
 
-def F52C1():
+def F57C1():
     """
     Get variable UONG PPI
 
@@ -21,21 +21,21 @@ def F52C1():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C1
+        DataFrame contains 2 columns MANC, F57C1
     """
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'UongPPI']]
         .rename(columns={
             'V1': 'MANC',
-            'UongPPI': 'F52C1'
+            'UongPPI': 'F57C1'
         })
         .fillna('')
         .replace(label.UONGTHUOC))
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C1A_LAN1_GIO():
+def F57C1A_LAN1_GIO():
     """
     Get variable PPI LAN 1 GIO
 
@@ -43,20 +43,20 @@ def F52C1A_LAN1_GIO():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C1A_LAN1_GIO
+        DataFrame contains 2 columns MANC, F57C1A_LAN1_GIO
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongPPIL1Gio']]
         .rename(columns={
             'V1': 'MANC',
-            'UongPPIL1Gio': 'F52C1A_LAN1_GIO'
+            'UongPPIL1Gio': 'F57C1A_LAN1_GIO'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C1A_LAN1_PHUT():
+def F57C1A_LAN1_PHUT():
     """
     Get variable PPI LAN 1 PHUT
 
@@ -64,20 +64,20 @@ def F52C1A_LAN1_PHUT():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C1A_LAN1_PHUT
+        DataFrame contains 2 columns MANC, F57C1A_LAN1_PHUT
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongPPIL1Phut']]
         .rename(columns={
             'V1': 'MANC',
-            'UongPPIL1Phut': 'F52C1A_LAN1_PHUT'
+            'UongPPIL1Phut': 'F57C1A_LAN1_PHUT'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C1A_LAN2_GIO():
+def F57C1A_LAN2_GIO():
     """
     Get variable PPI LAN 2 GIO
 
@@ -85,20 +85,20 @@ def F52C1A_LAN2_GIO():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C1A_LAN2_GIO
+        DataFrame contains 2 columns MANC, F57C1A_LAN2_GIO
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongPPIL2Gio']]
         .rename(columns={
             'V1': 'MANC',
-            'UongPPIL2Gio': 'F52C1A_LAN2_GIO'
+            'UongPPIL2Gio': 'F57C1A_LAN2_GIO'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C1A_LAN2_PHUT():
+def F57C1A_LAN2_PHUT():
     """
     Get variable PPI LAN 2 PHUT
 
@@ -106,20 +106,20 @@ def F52C1A_LAN2_PHUT():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C1A_LAN2_PHUT
+        DataFrame contains 2 columns MANC, F57C1A_LAN2_PHUT
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongPPIL2Phut']]
         .rename(columns={
             'V1': 'MANC',
-            'UongPPIL2Phut': 'F52C1A_LAN2_PHUT'
+            'UongPPIL2Phut': 'F57C1A_LAN2_PHUT'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C2():
+def F57C2():
     """
     Get variable UONG KS
 
@@ -127,21 +127,21 @@ def F52C2():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C2
+        DataFrame contains 2 columns MANC, F57C2
     """
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'UongKS']]
         .rename(columns={
             'V1': 'MANC',
-            'UongKS': 'F52C2'
+            'UongKS': 'F57C2'
         })
         .fillna('')
         .replace(label.UONGTHUOC))
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C2A_LAN1_GIO():
+def F57C2A_LAN1_GIO():
     """
     Get variable KS LAN 1 GIO
 
@@ -149,20 +149,20 @@ def F52C2A_LAN1_GIO():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C2A_LAN1_GIO
+        DataFrame contains 2 columns MANC, F57C2A_LAN1_GIO
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongKSL1Gio']]
         .rename(columns={
             'V1': 'MANC',
-            'UongKSL1Gio': 'F52C2A_LAN1_GIO'
+            'UongKSL1Gio': 'F57C2A_LAN1_GIO'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C2A_LAN1_PHUT():
+def F57C2A_LAN1_PHUT():
     """
     Get variable KS LAN 1 PHUT
 
@@ -170,20 +170,20 @@ def F52C2A_LAN1_PHUT():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C2A_LAN1_PHUT
+        DataFrame contains 2 columns MANC, F57C2A_LAN1_PHUT
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongKSL1Phut']]
         .rename(columns={
             'V1': 'MANC',
-            'UongKSL1Phut': 'F52C2A_LAN1_PHUT'
+            'UongKSL1Phut': 'F57C2A_LAN1_PHUT'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C2A_LAN2_GIO():
+def F57C2A_LAN2_GIO():
     """
     Get variable KS LAN 2 GIO
 
@@ -191,20 +191,20 @@ def F52C2A_LAN2_GIO():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C2A_LAN2_GIO
+        DataFrame contains 2 columns MANC, F57C2A_LAN2_GIO
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongKSL2Gio']]
         .rename(columns={
             'V1': 'MANC',
-            'UongKSL2Gio': 'F52C2A_LAN2_GIO'
+            'UongKSL2Gio': 'F57C2A_LAN2_GIO'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C2A_LAN2_PHUT():
+def F57C2A_LAN2_PHUT():
     """
     Get variable KS LAN 2 PHUT
 
@@ -212,20 +212,20 @@ def F52C2A_LAN2_PHUT():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C2A_LAN2_PHUT
+        DataFrame contains 2 columns MANC, F57C2A_LAN2_PHUT
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'UongKSL2Phut']]
         .rename(columns={
             'V1': 'MANC',
-            'UongKSL2Phut': 'F52C2A_LAN2_PHUT'
+            'UongKSL2Phut': 'F57C2A_LAN2_PHUT'
         })
         # .fillna(0)
         )
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C4_F52C5():
+def F57C4_F57C5():
     """
     Get variable UONG DU CU, DUNG LIEU
 
@@ -233,14 +233,14 @@ def F52C4_F52C5():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C4, F52C5
+        DataFrame contains 2 columns MANC, F57C4, F57C5
     """
-    df = (TK.query('LanTK == 2.0')
+    df = (TK.query('LanTK == 7.0')
         [['V1', 'DuCu' , 'DuLieu']]
         .rename(columns={
             'V1': 'MANC',
-            'DuCu': 'F52C4',
-            'DuLieu': 'F52C5',
+            'DuCu': 'F57C4',
+            'DuLieu': 'F57C5',
         })
         .replace(label.NHIGIA)
         .fillna('KHONG RO')
@@ -248,7 +248,7 @@ def F52C4_F52C5():
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
-def F52C3A_THUOC_F52C3A_TDP():
+def F57C3A_THUOC_F57C3A_TDP():
     """
     Get variable THUOC VA TDP
 
@@ -256,7 +256,7 @@ def F52C3A_THUOC_F52C3A_TDP():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C3A_THUOC, F52C3A_TDP
+        DataFrame contains 2 columns MANC, F57C3A_THUOC, F57C3A_TDP
     """
     tdp = (
         TDP.query('STT == 1.0')
@@ -264,7 +264,7 @@ def F52C3A_THUOC_F52C3A_TDP():
     tdp.loc[:, 'Thuoc'] = tdp['Thuoc'].replace(label.THUOC)
     tdp.loc[:, 'TDP'] = tdp['TDP'].replace(label.TRIEUCHUNG)
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'MaTK']]
         .rename(columns={
             'V1': 'MANC',
@@ -275,12 +275,12 @@ def F52C3A_THUOC_F52C3A_TDP():
     df.drop_duplicates(subset=['MANC', 'Thuoc', 'TDP'], inplace=True)
     df = df.fillna('KHONG')
     df.rename(columns={
-        'Thuoc': 'F52C3A_THUOC',
-        'TDP': 'F52C3A_TDP',
+        'Thuoc': 'F57C3A_THUOC',
+        'TDP': 'F57C3A_TDP',
     }, inplace=True)
     return df
 
-def F52C3B_THUOC_F52C3B_TDP():
+def F57C3B_THUOC_F57C3B_TDP():
     """
     Get variable THUOC VA TDP
 
@@ -288,7 +288,7 @@ def F52C3B_THUOC_F52C3B_TDP():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C3B_THUOC, F52C3B_TDP
+        DataFrame contains 2 columns MANC, F57C3B_THUOC, F57C3B_TDP
     """
     tdp = (
         TDP.query('STT == 2.0')
@@ -296,7 +296,7 @@ def F52C3B_THUOC_F52C3B_TDP():
     tdp.loc[:, 'Thuoc'] = tdp['Thuoc'].replace(label.THUOC)
     tdp.loc[:, 'TDP'] = tdp['TDP'].replace(label.TRIEUCHUNG)
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'MaTK']]
         .rename(columns={
             'V1': 'MANC',
@@ -307,12 +307,12 @@ def F52C3B_THUOC_F52C3B_TDP():
     df.drop_duplicates(subset=['MANC', 'Thuoc', 'TDP'], inplace=True)
     df = df.fillna('KHONG')
     df.rename(columns={
-        'Thuoc': 'F52C3B_THUOC',
-        'TDP': 'F52C3B_TDP',
+        'Thuoc': 'F57C3B_THUOC',
+        'TDP': 'F57C3B_TDP',
     }, inplace=True)
     return df
 
-def F52C3C_THUOC_F52C3C_TDP():
+def F57C3C_THUOC_F57C3C_TDP():
     """
     Get variable THUOC VA TDP
 
@@ -320,7 +320,7 @@ def F52C3C_THUOC_F52C3C_TDP():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C3C_THUOC, F52C3C_TDP
+        DataFrame contains 2 columns MANC, F57C3C_THUOC, F57C3C_TDP
     """
     tdp = (
         TDP.query('STT == 3.0')
@@ -328,7 +328,7 @@ def F52C3C_THUOC_F52C3C_TDP():
     tdp.loc[:, 'Thuoc'] = tdp['Thuoc'].replace(label.THUOC)
     tdp.loc[:, 'TDP'] = tdp['TDP'].replace(label.TRIEUCHUNG)
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'MaTK']]
         .rename(columns={
             'V1': 'MANC',
@@ -339,12 +339,12 @@ def F52C3C_THUOC_F52C3C_TDP():
     df.drop_duplicates(subset=['MANC', 'Thuoc', 'TDP'], inplace=True)
     df = df.fillna('KHONG')
     df.rename(columns={
-        'Thuoc': 'F52C3C_THUOC',
-        'TDP': 'F52C3C_TDP',
+        'Thuoc': 'F57C3C_THUOC',
+        'TDP': 'F57C3C_TDP',
     }, inplace=True)
     return df
 
-def F52C3D_THUOC_F52C3D_TDP():
+def F57C3D_THUOC_F57C3D_TDP():
     """
     Get variable THUOC VA TDP
 
@@ -352,7 +352,7 @@ def F52C3D_THUOC_F52C3D_TDP():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C3D_THUOC, F52C3D_TDP
+        DataFrame contains 2 columns MANC, F57C3D_THUOC, F57C3D_TDP
     """
     tdp = (
         TDP.query('STT == 4.0')
@@ -360,7 +360,7 @@ def F52C3D_THUOC_F52C3D_TDP():
     tdp.loc[:, 'Thuoc'] = tdp['Thuoc'].replace(label.THUOC)
     tdp.loc[:, 'TDP'] = tdp['TDP'].replace(label.TRIEUCHUNG)
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'MaTK']]
         .rename(columns={
             'V1': 'MANC',
@@ -371,12 +371,12 @@ def F52C3D_THUOC_F52C3D_TDP():
     df.drop_duplicates(subset=['MANC', 'Thuoc', 'TDP'], inplace=True)
     df = df.fillna('KHONG')
     df.rename(columns={
-        'Thuoc': 'F52C3D_THUOC',
-        'TDP': 'F52C3D_TDP',
+        'Thuoc': 'F57C3D_THUOC',
+        'TDP': 'F57C3D_TDP',
     }, inplace=True)
     return df
 
-def F52C3E_THUOC_F52C3E_TDP():
+def F57C3E_THUOC_F57C3E_TDP():
     """
     Get variable THUOC VA TDP
 
@@ -384,7 +384,7 @@ def F52C3E_THUOC_F52C3E_TDP():
         None
 
     Returns:
-        DataFrame contains 2 columns MANC, F52C3E_THUOC, F52C3E_TDP
+        DataFrame contains 2 columns MANC, F57C3E_THUOC, F57C3E_TDP
     """
     tdp = (
         TDP.query('STT == 5.0')
@@ -392,7 +392,7 @@ def F52C3E_THUOC_F52C3E_TDP():
     tdp.loc[:, 'Thuoc'] = tdp['Thuoc'].replace(label.THUOC)
     tdp.loc[:, 'TDP'] = tdp['TDP'].replace(label.TRIEUCHUNG)
     df = (TK
-        .query('LanTK == 2.0')
+        .query('LanTK == 7.0')
         [['V1', 'MaTK']]
         .rename(columns={
             'V1': 'MANC',
@@ -403,8 +403,8 @@ def F52C3E_THUOC_F52C3E_TDP():
     df.drop_duplicates(subset=['MANC', 'Thuoc', 'TDP'], inplace=True)
     df = df.fillna('KHONG')
     df.rename(columns={
-        'Thuoc': 'F52C3E_THUOC',
-        'TDP': 'F52C3E_TDP',
+        'Thuoc': 'F57C3E_THUOC',
+        'TDP': 'F57C3E_TDP',
     }, inplace=True)
     return df
 

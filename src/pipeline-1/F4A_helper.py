@@ -8,6 +8,27 @@ TK = pd.read_csv(path.TK, dtype={
     'V1': str,
 })
 
+def F4_NGAY():
+    """
+    Get variable NGAY THAM GIA (yyyy-mm-dd)
+
+    Args:
+        None
+
+    Returns:
+        DataFrame contains 2 columns MANC, NGAY 
+    """
+    df = (TK
+        .query('LanTK == 1.0')
+        [['V1', 'NgayTK']]
+        .rename(columns={
+            'V1': 'MANC',
+            'NgayTK': 'F4_NGAY'
+        }))
+    df.drop_duplicates(subset=['MANC'], inplace=True)
+    df['F4_NGAY'] = pd.to_datetime(df['F4_NGAY']).dt.strftime('%Y-%m-%d')
+    return df
+
 def F4A1():
     """
     Get variable DAU BUNG
