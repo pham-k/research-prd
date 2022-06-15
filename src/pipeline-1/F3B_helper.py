@@ -301,7 +301,7 @@ def F3B3A_TQ():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_TQ'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_TQ'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     # df.to_excel(path.INTERMEDIATE + 'F3B3A_TQ.xlsx')
@@ -332,7 +332,7 @@ def F3B3A_PV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_PV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_PV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
@@ -362,7 +362,7 @@ def F3B3A_TV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_TV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_TV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -393,7 +393,7 @@ def F3B3A_HV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_HV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_HV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -424,7 +424,7 @@ def F3B3A_MV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_MV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_MV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -455,7 +455,7 @@ def F3B3A_HTT():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_HTT'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_HTT'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -486,7 +486,7 @@ def F3B3A_D2():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 1.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3A_D2'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3A_D2'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -517,7 +517,7 @@ def F3B3B_TQ():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_TQ'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_TQ'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     # df.to_excel(path.INTERMEDIATE + 'F3B3B_TQ.xlsx')
@@ -548,7 +548,7 @@ def F3B3B_PV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_PV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_PV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
@@ -578,7 +578,7 @@ def F3B3B_TV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_TV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_TV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -609,7 +609,7 @@ def F3B3B_HV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_HV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_HV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -640,7 +640,7 @@ def F3B3B_MV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_MV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_MV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -671,7 +671,7 @@ def F3B3B_HTT():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_HTT'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_HTT'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -702,7 +702,7 @@ def F3B3B_D2():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 2.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3B_D2'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3B_D2'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -733,7 +733,7 @@ def F3B3C_TQ():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_TQ'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_TQ'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     # df.to_excel(path.INTERMEDIATE + 'F3B3C_TQ.xlsx')
@@ -764,7 +764,7 @@ def F3B3C_PV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_PV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_PV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
@@ -794,7 +794,7 @@ def F3B3C_TV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_TV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_TV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -825,7 +825,7 @@ def F3B3C_HV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_HV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_HV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -856,7 +856,7 @@ def F3B3C_MV():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_MV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_MV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -887,7 +887,7 @@ def F3B3C_HTT():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_HTT'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_HTT'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     
@@ -918,7 +918,7 @@ def F3B3C_D2():
         )
     df['rank'] = df.groupby('MANC')['NgayNS'].rank(method='first', na_option='bottom')
     df = df.query('rank == 3.0').drop(columns=['GhiChu', 'NgayNS', 'rank'])
-    df['F3B3C_D2'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3B3C_D2'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     

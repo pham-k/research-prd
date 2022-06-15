@@ -26,7 +26,7 @@ def F3E1A():
         .fillna('')
         .replace(label.NGUOITHAN))
     
-    df['F3E1A'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3E1A'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -48,7 +48,7 @@ def F3E1B():
         .fillna('')
         .replace(label.NGUOITHAN))
     
-    df['F3E1B'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3E1B'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -70,7 +70,7 @@ def F3E1C():
         .fillna('')
         .replace(label.NGUOITHAN))
     
-    df['F3E1C'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3E1C'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -92,7 +92,7 @@ def F3E1D():
         .fillna('')
         .replace(label.NGUOITHAN))
     
-    df['F3E1D'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3E1D'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -114,7 +114,7 @@ def F3E1E():
         .fillna('')
         .replace(label.NGUOITHAN))
     
-    df['F3E1E'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3E1E'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -136,7 +136,7 @@ def F3E2A():
         .fillna('')
         .replace(label.NGUOITHAN))
     
-    df['F3E2A'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3E2A'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 

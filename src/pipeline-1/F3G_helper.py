@@ -83,7 +83,7 @@ def F3G6():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G6'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G6'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     # df.to_excel(path.INTERMEDIATE + 'F3G6.xlsx')
@@ -111,7 +111,7 @@ def F3G7_PV():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G7_PV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G7_PV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     # df.to_excel(path.INTERMEDIATE + 'F3G7_PV.xlsx')
@@ -139,7 +139,7 @@ def F3G7_TV():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G7_TV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G7_TV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
 
@@ -167,7 +167,7 @@ def F3G7_HV():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G7_HV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G7_HV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
@@ -194,7 +194,7 @@ def F3G7_MV():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G7_MV'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G7_MV'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
@@ -221,7 +221,7 @@ def F3G7_HTT():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G7_HTT'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G7_HTT'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
@@ -248,7 +248,7 @@ def F3G7_D2():
         .fillna('')
         .replace(label.TONTHUONG)
         )
-    df['F3G7_D2'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3G7_D2'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'BINH THUONG'})
     df.drop(columns=cols, inplace=True)
     df.drop_duplicates(subset=['MANC'], inplace=True)
     return df

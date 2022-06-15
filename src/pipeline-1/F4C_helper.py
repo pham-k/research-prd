@@ -37,7 +37,8 @@ def F4C1():
             'Cay': 'F4C1'
         })
         .fillna('KHONG RO')
-        .replace(label.NHIGIA))
+        .replace(label.CAY)
+        )
     
     return df
 

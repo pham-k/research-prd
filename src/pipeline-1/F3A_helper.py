@@ -26,7 +26,7 @@ def F3A1():
         .fillna('')
         .replace(label.TRIEUCHUNG))
     
-    df['F3A1'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3A1'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -50,7 +50,7 @@ def F3A2():
         .fillna('')
         .replace(label.TRIEUCHUNG))
     
-    df['F3A2'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3A2'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
@@ -101,7 +101,7 @@ def F3A4():
             'V1': 'MANC',
             'DauBungTS': 'F3A4'
         })
-        .fillna('')
+        .fillna('KHONG RO')
         .replace(label.TANSUATTUAN))
     
     return df
@@ -491,7 +491,7 @@ def F3A8():
         .fillna('')
         .replace(label.TRIEUCHUNG))
     
-    df['F3A8'] = df.apply(util.concatenate_columns, axis=1)
+    df['F3A8'] = df.apply(util.concatenate_columns, axis=1).replace({'': 'KHONG RO'})
     df.drop(columns=cols, inplace=True)
     return df
 
