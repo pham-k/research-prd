@@ -8,6 +8,25 @@ FORM2 = pd.read_csv(path.FORM2, dtype={
     'V1': str,
 })
 
+def F2F1():
+    """
+    Get variable LOP
+
+    Args:
+        None
+
+    Returns:
+        DataFrame contains 2 columns MANC, F2F1
+    """
+    df = (FORM2[['V1', 'Lop']]
+        .rename(columns={
+            'V1': 'MANC',
+            'Lop': 'F2F1'
+        })
+        .fillna('KHONG RO')
+        )
+    return df
+
 def F2F2():
     """
     Get variable SI SO LOP

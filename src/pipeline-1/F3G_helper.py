@@ -50,7 +50,8 @@ def F3G5():
     Returns:
         DataFrame contains 2 columns MANC, F3G5
     """
-    df = (NS[['V1', 'Clo']]
+    df = (NS.query('GhiChu == 2.0')
+        [['V1', 'Clo']]
         .rename(columns={
             'V1': 'MANC',
             'Clo': 'F3G5'
@@ -58,7 +59,7 @@ def F3G5():
         .replace(label.NHIGIA)
         .fillna('KHONG RO')
         )
-    
+    df.drop_duplicates(subset=['MANC'], inplace=True)
     return df
 
 def F3G6():

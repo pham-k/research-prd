@@ -36,7 +36,7 @@ def NGAY():
             'V1': 'MANC',
             'NgayTG': 'NGAY'
         }))
-    df['NGAY'] = pd.to_datetime(df['NGAY']).dt.strftime('%Y-%m-%d')
+    df['NGAY'] = pd.to_datetime(df['NGAY'], format='%m-%d-%Y').dt.strftime('%Y-%m-%d')
     return df
 
 def MAHS():
@@ -89,7 +89,7 @@ def F2Z2():
             'V1': 'MANC',
             'NgaySinh': 'F2Z2'
         }))
-    df['F2Z2'] = pd.to_datetime(df['F2Z2']).dt.strftime('%Y-%m-%d')
+    df['F2Z2'] = pd.to_datetime(df['F2Z2'], format="%d-%m-%Y").dt.strftime('%Y-%m-%d')
     return df
 
 def F2Z3():

@@ -70,6 +70,7 @@ def main():
         .merge(F2E.F2E2(), how='left')
         .merge(F2E.F2E3(), how='left')
         .merge(F2E.F2E4(), how='left')
+        .merge(F2F.F2F1(), how='left')
         .merge(F2F.F2F2(), how='left')
         .merge(F2F.F2F3_F2F7(), how='left')
         .merge(F2G.F2G1(), how='left')
@@ -182,6 +183,7 @@ def main():
         .merge(F3F.F3F1(), how='left')
         .merge(F3F.F3F2(), how='left')
         .merge(F3G.F3G1_F3G4(), how='left')
+        .merge(F3G.F3G5(), how='left')
         .merge(F3G.F3G6(), how='left')  # TODO
         .merge(F3G.F3G7_PV(), how='left')
         .merge(F3G.F3G7_TV(), how='left')
@@ -413,7 +415,7 @@ def main():
         .merge(F57D.F57D8(), how='left')
     )
     # view sample
-    cols = [0] + list(range(318, 323))
+    # cols = [0] + list(range(318, 323))
     # print(df.iloc[:, cols].info())
     # print(df.iloc[:, cols].sample(5))
     # print(df.loc[:, ['MANC', 'F4_NGAY', 'F52_NGAY', 'F53_NGAY']].sample(5))
